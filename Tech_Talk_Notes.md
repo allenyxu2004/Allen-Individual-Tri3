@@ -2,6 +2,17 @@
 
 # Tech Talk Notes
 
+# Tech Talk 1
+
+## Linked Lists
+
+- As stated, most "Data Structures" conversations usually begin with Arrays
+>- Is built into most Computer Programming Languages 
+- College Board has Units 6-8 which discuss Arrays, ArrayLists, and 2-Dimensional Arrays
+- Most Data Structures conversations continue with the discussions of Linked Lists which are the foundation for Stacks and Queues
+
+# Tech Talk 0
+
 ## Data Structures
 
 - A data structure is a method of organizing data
