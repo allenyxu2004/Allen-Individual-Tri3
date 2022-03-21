@@ -3,7 +3,7 @@
 # Allen-Individual-Tri3
 
 ## Github Pages Link
-[Allen Github Page](https://purplebears321.github.io/Allen-Individual-Tri3/home)
+[Allen Github Page](https://purplebears321.github.io/Allen-Individual-Tri3/Repl)
 ## Replit Link
 [Allen Individual Repl](https://replit.com/@purplebears321/allenTT0#README.md)
 ## Review Tickets
