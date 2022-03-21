@@ -1,5 +1,21 @@
 {% include navigation.html %}
 
+## Week 1 Tech Talk 
+
+## Linked Lists
+
+- As stated, most "Data Structures" conversations usually begin with Arrays
+>- Is built into most Computer Programming Languages 
+- College Board has Units 6-8 which discuss Arrays, ArrayLists, and 2-Dimensional Arrays
+- Most Data Structures conversations continue with the discussions of Linked Lists which are the foundation for Stacks and Queues
+
+## Generic T
+- Generic type, can include both strings and integers
+- Used for when you don't want to be limited to soley strings or integers
+>- As opposed to declaring an array list for Strings and Integers individually, you can use the same class to make both integer and string lists
+## Queue Add and Delete
+- Adding and deleting in queues can be done with .pull() and .add()
+>- Built in version, but alternatives can also be used to achieve same result
 
 ## Week 0 Tech Talk
 
