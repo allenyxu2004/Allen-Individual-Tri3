@@ -1,6 +1,5 @@
-{% include navigation.html %}
 
-# Allen-Individual-Tri3
+# Allen_Individual_Tri3
 
 ## Github Pages Link
 [Allen Github Page](https://purplebears321.github.io/Allen-Individual-Tri3/Repl)
