@@ -1,4 +1,79 @@
 {% include navigation.html %}
+## Week 2 Tech Talk
+
+## Key Learnings
+- Learned detailed information regarding reverse polish notation
+>- Understood how the algorithm worked
+>- Vizualised the actual RPN through the live demonstration
+- Tokenizers was another key takeaway
+>- Used an automated method with PBL
+>- Now understood how to implement it individually, check for spaces and appending to array list accordingly
+
+## Calculator Theory
+- In mathematics, an expression or mathematical expression is a finite combination of symbols that is well-formed according to rules that depend on the context.
+- In computers, expression can be hard to calculate with precedence rules. 
+- In computer math we often convert strings into Reverse Polish Notation (RPN, 3 + 4 becomes 3 4 +) using the Shunting-yard algorithm. Review Wikipedia diagram and the code and you will see the need for a Stack.
+- RPN History:
+>- Was originally used in around the 1950s as a way of calculating
+>- Most optimal way for mathmaticians to calculate at the time
+>- Nowadays we use a much easier, readable method of calculating with calculators
+## Key Calculator Aspects
+- Calculator needs a driver that can consider multiple conditions
+- Mort example of ideal driver:
+```  Calculator simpleMath = new Calculator("100 + 200  * 3");
+ System.out.println("Simple Math\n" + simpleMath);
+
+ Calculator parenthesisMath = new Calculator("(100 + 200)  * 3");
+ System.out.println("Parenthesis Math\n" + parenthesisMath);
+
+ Calculator allMath = new Calculator("200 % 300 + 5 + 300 / 200 + 1 * 100");
+ System.out.println("All Math\n" + allMath);
+
+ Calculator allMath2 = new Calculator("200 % (300 + 5 + 300) / 200 + 1 * 100");
+ System.out.println("All Math2\n" + allMath2);
+```
+- Since you are creating calculator from scratch, operators also need to be defined
+```     private final Map<String, Integer> OPERATORS = new HashMap<>();
+    {
+        // Map<"token", precedence>
+        OPERATORS.put("*", 3);
+        OPERATORS.put("/", 3);
+        OPERATORS.put("%", 3);
+        OPERATORS.put("+", 4);
+        OPERATORS.put("-", 4);
+    }
+```
+- Tokenizer acts as a "split" and converts list into individual elements
+``` private void termTokenizer() {
+        // contains final list of tokens
+        this.tokens = new ArrayList<>();
+
+        int start = 0;  // term split starting index
+        StringBuilder multiCharTerm = new StringBuilder();    // term holder
+        for (int i = 0; i < this.expression.length(); i++) {
+            Character c = this.expression.charAt(i);
+            if ( isOperator(c.toString() ) || isSeperator(c.toString())  ) {
+                // 1st check for working term and add if it exists
+                if (multiCharTerm.length() > 0) {
+                    tokens.add(this.expression.substring(start, i));
+                }
+                // Add operator or parenthesis term to list
+                if (c != ' ') {
+                    tokens.add(c.toString());
+                }
+                // Get ready for next term
+                start = i + 1;
+                multiCharTerm = new StringBuilder();
+            } else {
+                // multi character terms: numbers, functions, perhaps non-supported elements
+                // Add next character to working term
+                multiCharTerm.append(c);
+            }
+
+        }
+        // Add last term
+        if (multiCharTerm.length() > 0) {
+            tokens.add(this.expression.substring(start));```
 
 ## Week 1 Tech Talk 
 
