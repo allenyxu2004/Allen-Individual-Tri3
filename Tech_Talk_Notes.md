@@ -17,6 +17,7 @@
 >- Was originally used in around the 1950s as a way of calculating
 >- Most optimal way for mathmaticians to calculate at the time
 >- Nowadays we use a much easier, readable method of calculating with calculators
+
 ## Key Calculator Aspects
 - Calculator needs a driver that can consider multiple conditions
 - Mort example of ideal driver:
