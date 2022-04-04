@@ -9,44 +9,38 @@
 - Whole pass is then performed to ensure that the array is fully sorted, and the algorithm knows to stop
 - **Time Complexity/ Big O Notation:** Bubble sort can vary in its Big O Notation, with a worst case scenario of O(n^2) and a best case scenario of O(n)
 - Code which we built off of in the implementation process
-``` class BubbleSort
-{
-    void bubbleSort(int arr[])
-    {
-        int n = arr.length;
-        for (int i = 0; i < n-1; i++)
-            for (int j = 0; j < n-i-1; j++)
-                if (arr[j] > arr[j+1])
-                {
-                    // swap arr[j+1] and arr[j]
-                    int temp = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = temp;
-                }
+``` 
+package src.week3.SortTypes;
+import java.util.*;
+
+public class BubbleSort {
+  public static void SortSortSort(List<Integer> list) {
+    Integer temp;
+    boolean sorted = false;
+
+    while (!sorted) {
+        sorted = true;
+        for (int i = 0; i < list.size()-1; i++) {
+            if (list.get(i).compareTo(list.get(i + 1)) > 0) {
+                temp = list.get(i);
+                list.set(i, list.get(i + 1));
+                list.set(i + 1, temp);
+                sorted = false;
+            }
+        }
     }
- 
-    /* Prints the array */
-    void printArray(int arr[])
-    {
-        int n = arr.length;
-        for (int i=0; i<n; ++i)
-            System.out.print(arr[i] + " ");
-        System.out.println();
-    }
- 
-    // Driver method to test above
-    public static void main(String args[])
-    {
-        BubbleSort ob = new BubbleSort();
-        int arr[] = {64, 34, 25, 12, 22, 11, 90};
-        ob.bubbleSort(arr);
-        System.out.println("Sorted array");
-        ob.printArray(arr);
-    }
-} 
+}
+}
 ```
 
 ### Implementation
+- Created individual file to contain the sorting algorithm developed
+- Utilized each sort as a method, which we use to sort the 5,000 element array when we use analyze()
+- Time is recorded each time we sort and added to an arraylist
+>- Using this list we can find total time, as well as the largest and smallest values and remove them if nessecary
+- Data is then displayed 
+
+![Output](https://files.catbox.moe/sdq6t1.png)
 
 ## Selection Sort
 - Finds the minimun value element repeadly in an ascending pattern
@@ -56,50 +50,36 @@
 ![Flowchart](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20220203094305/Selection-Sort-Flowhchart.png)
 - Example algorithm of a selection sort which we built off of and implemented:
 ``` 
-class SelectionSort
-{
-    void sort(int arr[])
-    {
-        int n = arr.length;
-  
-        // One by one move boundary of unsorted subarray
-        for (int i = 0; i < n-1; i++)
-        {
-            // Find the minimum element in unsorted array
-            int min_idx = i;
-            for (int j = i+1; j < n; j++)
-                if (arr[j] < arr[min_idx])
-                    min_idx = j;
-  
-            // Swap the found minimum element with the first
-            // element
-            int temp = arr[min_idx];
-            arr[min_idx] = arr[i];
-            arr[i] = temp;
-        }
-    }
-  
-    // Prints the array
-    void printArray(int arr[])
-    {
-        int n = arr.length;
-        for (int i=0; i<n; ++i)
-            System.out.print(arr[i]+" ");
-        System.out.println();
-    }
-  
-    // Driver code to test above
-    public static void main(String args[])
-    {
-        SelectionSort ob = new SelectionSort();
-        int arr[] = {64,25,12,22,11};
-        ob.sort(arr);
-        System.out.println("Sorted array");
-        ob.printArray(arr);
-    }
+package src.week3.SortTypes;
+import java.util.*;
+
+
+public class SelectionSort {  
+    public static void SortSortSort(ArrayList<Integer> arr){  
+        for (int i = 0; i < arr.size() - 1; i++)  
+        {  
+            int index = i;  
+            for (int j = i + 1; j < arr.size(); j++){  
+                if (arr.get(j) < arr.get(index)){  
+                    index = j; //searching for lowest index  
+                }  
+            }  
+            int smallerNumber = arr.get(index);   
+            arr.set(index, arr.get(i)); 
+            arr.set(i, smallerNumber);  
+        }  
+    }  
 }
 ```
 ### Implementation
+- Implementation is similar to other sorts
+- Created individual file to contain the sorting algorithm developed
+- Utilized each sort as a method, which we use to sort the 5,000 element array when we use analyze()
+- Time is recorded each time we sort and added to an arraylist
+>- Using this list we can find total time, as well as the largest and smallest values and remove them if nessecary
+- Data is then displayed 
+
+![Output](https://files.catbox.moe/sxjm37.png)
 
 ## Merge Sort
 - Merge Sort is a divide and conquer type of algorithm
@@ -110,106 +90,102 @@ class SelectionSort
 ![Flowchart](https://media.geeksforgeeks.org/wp-content/cdn-uploads/Merge-Sort-Tutorial.png)
 - Sample algorithm which we built off to try and implement
 ```
-class MergeSort 
-{
-    // Merges two subarrays of arr[].
-    // First subarray is arr[l..m]
-    // Second subarray is arr[m+1..r]
-    void merge(int arr[], int l, int m, int r)
-    {
-        // Find sizes of two subarrays to be merged
-        int n1 = m - l + 1;
-        int n2 = r - m;
-  
-        /* Create temp arrays */
-        int L[] = new int[n1];
-        int R[] = new int[n2];
-  
-        /*Copy data to temp arrays*/
-        for (int i = 0; i < n1; ++i)
-            L[i] = arr[l + i];
-        for (int j = 0; j < n2; ++j)
-            R[j] = arr[m + 1 + j];
-  
-        /* Merge the temp arrays */
-  
-        // Initial indexes of first and second subarrays
-        int i = 0, j = 0;
-  
-        // Initial index of merged subarray array
-        int k = l;
-        while (i < n1 && j < n2) {
-            if (L[i] <= R[j]) {
-                arr[k] = L[i];
-                i++;
+package src.week3.SortTypes;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class MergeSort {
+ 
+    private ArrayList<String> strList;
+ 
+    public static void SortSortSort(ArrayList<Integer> whole) {
+        ArrayList<Integer> left = new ArrayList<Integer>();
+        ArrayList<Integer> right = new ArrayList<Integer>();
+        int center;
+
+            center = whole.size()/2;
+            // copy the left half of whole into the left.
+            for (int i=0; i<center; i++) {
+                    left.add(whole.get(i));
             }
-            else {
-                arr[k] = R[j];
-                j++;
+ 
+            //copy the right half of whole into the new arraylist.
+            for (int i=center; i<whole.size(); i++) {
+                    right.add(whole.get(i));
             }
-            k++;
-        }
-  
-        /* Copy remaining elements of L[] if any */
-        while (i < n1) {
-            arr[k] = L[i];
-            i++;
-            k++;
-        }
-  
-        /* Copy remaining elements of R[] if any */
-        while (j < n2) {
-            arr[k] = R[j];
-            j++;
-            k++;
-        }
-    }
-  
-    // Main function that sorts arr[l..r] using
-    // merge()
-    void sort(int arr[], int l, int r)
-    {
-        if (l < r) {
-            // Find the middle point
-            int m =l+ (r-l)/2;
-  
-            // Sort first and second halves
-            sort(arr, l, m);
-            sort(arr, m + 1, r);
-  
-            // Merge the sorted halves
-            merge(arr, l, m, r);
-        }
-    }
-  
-    /* A utility function to print array of size n */
-    static void printArray(int arr[])
-    {
-        int n = arr.length;
-        for (int i = 0; i < n; ++i)
-            System.out.print(arr[i] + " ");
-        System.out.println();
-    }
-  
-    // Driver code
-    public static void main(String args[])
-    {
-        int arr[] = { 12, 11, 13, 5, 6, 7 };
-  
-        System.out.println("Given Array");
-        printArray(arr);
-  
-        MergeSort ob = new MergeSort();
-        ob.sort(arr, 0, arr.length - 1);
-  
-        System.out.println("\nSorted array");
-        printArray(arr);
-    }
+ 
+            // Sort the left and right halves of the arraylist.
+            left  = mergeSort(left);
+            right = mergeSort(right);
+ 
+            // Merge the results back together.
+            merge(left, right, whole);
+      
+
 }
+
+
+
+      public static ArrayList<Integer>mergeSort(ArrayList<Integer> whole) {
+        ArrayList<Integer> left = new ArrayList<Integer>();
+        ArrayList<Integer> right = new ArrayList<Integer>();
+        int center;
+
+        if (whole.size() == 1) {    
+        return whole;
+    } else {
+          center = whole.size()/2;
+            // copy the left half of whole into the left.
+            for (int i=0; i<center; i++) {
+                    left.add(whole.get(i));
+            }
+ 
+            //copy the right half of whole into the new arraylist.
+            for (int i=center; i<whole.size(); i++) {
+                    right.add(whole.get(i));
+            }
+ 
+            // Sort the left and right halves of the arraylist.
+            left  = mergeSort(left);
+            right = mergeSort(right);
+ 
+            // Merge the results back together.
+            merge(left, right, whole);
+      
+            return whole;
+    }
+            
+}
+ 
+    public static void merge(ArrayList<Integer> left, ArrayList<Integer> right, ArrayList<Integer> whole) {
+        int leftIndex = 0;
+        int rightIndex = 0;
+        int wholeIndex = 0;
+ 
+        // As long as neither the left nor the right ArrayList has
+        // been used up, keep taking the smaller of left.get(leftIndex)
+        // or right.get(rightIndex) and adding it at both.get(bothIndex).
+        while (leftIndex < left.size() && rightIndex < right.size()) {
+            if ( (left.get(leftIndex).compareTo(right.get(rightIndex))) < 0) {
+                whole.set(wholeIndex, left.get(leftIndex));
+                leftIndex++;
+            } else {
+                whole.set(wholeIndex, right.get(rightIndex));
+                rightIndex++;
+            }
+            wholeIndex++;
 ```
 ### Implementation
-- 
+- Implementation is similar to other sorts
+- Created individual file to contain the sorting algorithm developed
+- Utilized each sort as a method, which we use to sort the 5,000 element array when we use analyze()
+- Time is recorded each time we sort and added to an arraylist
+>- Using this list we can find total time, as well as the largest and smallest values and remove them if nessecary
+- Data is then displayed 
 
+![Output](https://files.catbox.moe/o3fnf3.png)
+## Insertion Sort
+- 
 # Tech Talk 1
 
 ## Linked Lists
