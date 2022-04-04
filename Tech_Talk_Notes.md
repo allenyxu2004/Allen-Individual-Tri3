@@ -8,7 +8,7 @@
 - Swaps adajcent elements into the correct order
 - Whole pass is then performed to ensure that the array is fully sorted, and the algorithm knows to stop
 - **Time Complexity/ Big O Notation:** Bubble sort can vary in its Big O Notation, with a worst case scenario of O(n^2) and a best case scenario of O(n)
-- Example of the pure algorithm
+- Code which we built off of in the implementation process
 ``` class BubbleSort
 {
     void bubbleSort(int arr[])
@@ -54,7 +54,7 @@
 - **Time Complexity Formula/ Big O Notation:** O(n^2) is the notation because selection sort utilizes 2 arrays
 
 ![Flowchart](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20220203094305/Selection-Sort-Flowhchart.png)
-- Example algorithm of a selection sort:
+- Example algorithm of a selection sort which we built off of and implemented:
 ``` 
 class SelectionSort
 {
