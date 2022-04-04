@@ -8,8 +8,6 @@ import src.week3.SortTypes.*;
 
 public class BigData {
     private final ArrayList<Integer> data = new ArrayList<>();
-    private final ArrayList<Integer> totalTime = new ArrayList<>();
-
     private final Duration timeElapsed;
 
     public BigData(int size, String method) {
