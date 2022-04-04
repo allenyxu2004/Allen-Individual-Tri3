@@ -56,6 +56,7 @@ class Driver {
         MenuRow[] rows = new MenuRow[]{
                 new MenuRow("Exit", () -> main(null)),
                 new MenuRow("Sort", () -> Sort.main(null)),
+                new MenuRow("Condensed Sort", () -> ShortSort.main(null)),
         };
 
         Menu3 menu = new Menu3(rows);
