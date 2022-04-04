@@ -181,6 +181,7 @@ public class MergeSort {
 - Data is then displayed 
 
 ![Output](https://files.catbox.moe/o3fnf3.png)
+
 ## Insertion Sort
 - Uses 2 arrays, sorted and unsorted, and sorts the elements within the unsorted array and addes them to the sorted array
 - **Time Complexity/Big O Notation:** O(n). This means that the time taken to sort is directly proportional to the amount of elemenets sorted. However, this is only the best case scenario. On average, and in the worst case, the Big O Notation is O(n^2) which notates a longer time taken
