@@ -46,6 +46,7 @@ public class BubbleSort {
 
 ![Flowchart](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20220203094305/Selection-Sort-Flowhchart.png)
 - Example algorithm of a selection sort which we built off of and implemented:
+
 ``` 
 package src.week3.SortTypes;
 import java.util.*;
@@ -68,6 +69,7 @@ public class SelectionSort {
     }  
 }
 ```
+
 ### Implementation
 - Implementation is similar to other sorts
 - Created individual file to contain the sorting algorithm developed
@@ -172,6 +174,7 @@ public class MergeSort {
             }
             wholeIndex++;
 ```
+
 ### Implementation
 - Implementation is similar to other sorts
 - Created individual file to contain the sorting algorithm developed
@@ -194,6 +197,7 @@ element.
 ![Flowchart](https://media.geeksforgeeks.org/wp-content/uploads/insertionsort.png)
 
 -  Algorithm we worked on implementing into the challenge
+
 ```
 package src.week3.SortTypes;
 import java.util.*;
@@ -212,6 +216,7 @@ public class InsertionSort {
   }
 }
 ```
+
 ### Implementation
 - Implementation is similar to other sorts
 - Created individual file to contain the sorting algorithm developed
@@ -256,8 +261,11 @@ public class InsertionSort {
  Calculator allMath2 = new Calculator("200 % (300 + 5 + 300) / 200 + 1 * 100");
  System.out.println("All Math2\n" + allMath2);
 ```
+
 - Since you are creating calculator from scratch, operators also need to be defined
-```     private final Map<String, Integer> OPERATORS = new HashMap<>();
+
+```     
+private final Map<String, Integer> OPERATORS = new HashMap<>();
     {
         // Map<"token", precedence>
         OPERATORS.put("*", 3);
@@ -267,7 +275,9 @@ public class InsertionSort {
         OPERATORS.put("-", 4);
     }
 ```
+
 - Tokenizer acts as a "split" and converts list into individual elements
+
 ``` private void termTokenizer() {
         // contains final list of tokens
         this.tokens = new ArrayList<>();
@@ -297,7 +307,8 @@ public class InsertionSort {
         }
         // Add last term
         if (multiCharTerm.length() > 0) {
-            tokens.add(this.expression.substring(start));```
+            tokens.add(this.expression.substring(start));
+```
 
 ## Week 1 Tech Talk 
 
