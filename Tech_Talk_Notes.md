@@ -185,7 +185,45 @@ public class MergeSort {
 
 ![Output](https://files.catbox.moe/o3fnf3.png)
 ## Insertion Sort
-- 
+- Uses 2 arrays, sorted and unsorted, and sorts the elements within the unsorted array and addes them to the sorted array
+- **Time Complexity/Big O Notation:** O(n). This means that the time taken to sort is directly proportional to the amount of elemenets sorted. However, this is only the best case scenario. On average, and in the worst case, the Big O Notation is O(n^2) which notates a longer time taken
+- Algorithm Breakdown:
+>- Iterate from arr[1] to arr[n] over the array. 
+>- Compare the current element (key) to its predecessor. 
+>- If the key element is smaller than its predecessor, compare it to the elements before. Move the greater elements one position up to make space for the swapped 
+element.
+
+![Flowchart](https://media.geeksforgeeks.org/wp-content/uploads/insertionsort.png)
+
+-  Algorithm we worked on implementing into the challenge
+```
+package src.week3.SortTypes;
+import java.util.*;
+
+public class InsertionSort {
+  public static void SortSortSort(List<Integer> list) {
+      for (int j = 1; j < list.size(); j++) {
+          Integer current = list.get(j);
+          int i = j-1;
+          while ((i > -1) && (list.get(i) > current)) {
+              list.set(i+1, list.get(i));
+              i--;
+          }
+          list.set(i+1, current);
+      }
+  }
+}
+```
+### Implementation
+- Implementation is similar to other sorts
+- Created individual file to contain the sorting algorithm developed
+- Utilized each sort as a method, which we use to sort the 5,000 element array when we use analyze()
+- Time is recorded each time we sort and added to an arraylist
+>- Using this list we can find total time, as well as the largest and smallest values and remove them if nessecary
+- Data is then displayed 
+
+![Output](https://files.catbox.moe/cb727p.png)
+
 # Tech Talk 1
 
 ## Linked Lists
