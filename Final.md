@@ -1,3 +1,5 @@
+{% include navigation.html %}
+
 # Night At the Museum Individual Final
 
 ### Self Grade Assesment: 2.4/2.5
