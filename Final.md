@@ -1,8 +1,8 @@
 # Night At the Museum Individual Final
 
-## Tech Documentation
-
 ### Self Grade Assesment: 2.4/2.5
+
+## Tech Documentation
 
 **Login Technical Documentation**
 - Used information from [Person DB](https://github.com/zenxha/musicgacha/tree/main/src/main/java/com/musicgacha/controllers/database/person) to act as information to be used in login
